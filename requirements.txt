@@ -1,0 +1,15 @@
+torch
+transformers
+datasets 
+evaluate 
+accelerate 
+timm
+ipykernel
+ipywidgets
+IProgress
+scipy 
+scikit-learn
+peft 
+bitsandbytes
+trl
+streamlit
