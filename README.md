@@ -82,6 +82,8 @@ Run the Streamlit app for interactive text generation:
 streamlit run app.py
 ```
 
+![Streamlit App Interface](streamlit.png)
+
 ### Generation Options
 1. **Beam Search**:
    - Control beam width and diversity
@@ -98,7 +100,7 @@ streamlit run app.py
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-checkpoint = 'checkpoint-50'
+checkpoint = 'checkpoint-1200'
 model = AutoModelForCausalLM.from_pretrained(checkpoint).to(device)
 
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
@@ -141,21 +143,16 @@ pip install -r requirements.txt
 "Быть или не быть?"
 
 **Generated Output**:  
-"Быть или не быть? Вот в чем вопрос.  
-— Да, да, конечно, — сказал я, и мы оба засмеялись.  
-Потом я спросил: — А как вы думаете, что будет с нами,  
-если мы все-таки останемся в живых?  
-Что будет, когда мы умрем? Как мы будем жить после смерти?  
-Ведь мы же не знаем, как жить. Мы даже не можем сказать,  
-кто мы такие, откуда мы, куда мы идем, зачем мы..."
+Быть или не быть? Вот вопрос, на который я не мог найти никакого ответа. Я не знал, что мне делать и как мне быть. Наконец я решился и пошел к Наташе. Она сидела одна и читала книгу. Увидев меня, она тотчас же встала со стула и подошла ко мне.  Что с вами? Вы нездоровы?  спросила она, смотря на меня с каким-то беспокойством и в то же время как будто с удивлением,  я думала, вы больны.
 
 ## File Structure 📂
 ```
-├── app.py                 - Streamlit web application
+├── app.py                  - Streamlit web application
 ├── fine-tune lora ru.ipynb - Jupyter notebook with full training code
-├── corpus.txt             - Dostoevsky's literary corpus
-├── requirements.txt       - Python dependencies
-└── checkpoint-50/        - Trained model checkpoint
+├── corpus.txt              - Dostoevsky's literary corpus
+├── requirements.txt        - Python dependencies
+├── checkpoint-50/          - Trained model checkpoint (50 steps)
+└── checkpoint-1200/        - Trained model checkpoint (1200 steps)
 ```
 
 ## License 📄
