@@ -3,8 +3,8 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
 import time
-
-checkpoint = 'rugpt3large_lora_results/checkpoint-50'
+import os
+checkpoint = 'checkpoint-1200'
 
 # model loading (cached for performance)
 @st.cache_resource
@@ -17,7 +17,7 @@ def load_model():
 model, tokenizer = load_model()
 
 # move model to GPU if available
-device = torch.device("cuda:5" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 model.to(device)
 
 # UI
