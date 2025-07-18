@@ -98,7 +98,7 @@ streamlit run app.py
 ### Code Generation Example
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
-
+import torch
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 checkpoint = 'checkpoint-1200'
 model = AutoModelForCausalLM.from_pretrained(checkpoint).to(device)
